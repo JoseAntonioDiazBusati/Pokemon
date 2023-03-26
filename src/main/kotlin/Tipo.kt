@@ -1,5 +1,4 @@
 class Tipo(var tipo: String) {
-
     private val fortalezas: Map<String, List<String>> = mapOf(
         "fuego" to listOf("hierba"),
         "agua" to listOf("fuego"),
@@ -20,17 +19,17 @@ class Tipo(var tipo: String) {
     fun calcularEfectividad(tipoAtaque: Tipo): Efectividad {
         if (tipo == "fuego") {
             return when (tipoAtaque.tipo) {
-                "hierba" -> Efectividad.MUY_EFECTIVO
+                "planta" -> Efectividad.MUY_EFECTIVO
                 "agua" -> Efectividad.POCO_EFECTIVO
                 else -> Efectividad.NORMAL
             }
         } else if (tipo == "agua") {
             return when (tipoAtaque.tipo) {
                 "fuego" -> Efectividad.MUY_EFECTIVO
-                "hierba" -> Efectividad.POCO_EFECTIVO
+                "planta" -> Efectividad.POCO_EFECTIVO
                 else -> Efectividad.NORMAL
             }
-        } else if (tipo == "hierba") {
+        } else if (tipo == "planta") {
             return when (tipoAtaque.tipo) {
                 "agua" -> Efectividad.MUY_EFECTIVO
                 "fuego" -> Efectividad.POCO_EFECTIVO
@@ -48,4 +47,26 @@ class Tipo(var tipo: String) {
         return debilidades[tipo] ?: emptyList()
     }
 
+    companion object {
+        fun calcularEfectividad(tipoAtaque: Tipo, tipoActual: Tipo): Efectividad {
+            return when (tipoActual.tipo) {
+                "fuego" -> when(tipoAtaque.tipo){
+                    "agua" -> Efectividad.MUY_EFECTIVO
+                    "planta" -> Efectividad.POCO_EFECTIVO
+                    else -> Efectividad.NORMAL
+                }
+                "agua" -> when (tipoAtaque.tipo) {
+                    "planta" -> Efectividad.MUY_EFECTIVO
+                    "fuego" -> Efectividad.POCO_EFECTIVO
+                    else -> Efectividad.NORMAL
+                }
+                "planta" -> when (tipoAtaque.tipo) {
+                    "fuego" -> Efectividad.MUY_EFECTIVO
+                    "agua" -> Efectividad.POCO_EFECTIVO
+                    else -> Efectividad.NORMAL
+                }
+                else -> Efectividad.POCO_EFECTIVO
+            }
+        }
+    }
 }
