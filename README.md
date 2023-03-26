@@ -1,2 +1,2 @@
 # Pokemon
-Trabajo de entrono junto a Pablo Carmona
+Trabajo de entorno junto a Pablo Carmona
