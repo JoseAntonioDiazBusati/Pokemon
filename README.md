@@ -3,7 +3,7 @@
 
 Trabajo de entorno junto a Pablo Carmona.  
 
-El proyecto se divide en 4 clases y una funcion principal.  
+El proyecto se divide en 4 clases :  
 
 - La clase Jugador se define por la eleccion de un pokemon para cada jugador.
      - En la clase jugador tendremos una función para que pueda obtener un pokemon que hayamos creado.
@@ -13,6 +13,4 @@ El proyecto se divide en 4 clases y una funcion principal.
      - En la clase Tipo hemos hecho una función para que reciba el tipo del pokemon que recibe el ataque y el tipo del ataque , es decir, veremos si es efectivo o no y se lo mandará a la función de la clase pokemon
 - La clase Ataque que esta define la potencia de cada ataque y su tipo.
 
-En la funcion principal se definen a los 3 pokemons elegibles, en los cuales se 
-definen sus puntos de vida y ataque; cuando la vida de los pokemons lleguen a 
-0 el combate se acaba y el vencedor será aquel que no haya sido derrotado.
+Luego tendremos el main , donde crearemos los ataques , los pokemons y los entrenadores.
