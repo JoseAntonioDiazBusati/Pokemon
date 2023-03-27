@@ -24,10 +24,10 @@ Luego tendremos el main , donde crearemos los ataques , los pokemons y los entre
 
 - **val squirtle** = Pokemon("Squirtle", "Una tortuga y que mas quieres", Tipo("agua"), 40, 120)    
 
-- **val bulbasaur** = Pokemon("Bulbasaur", "Un bicharraco que se fuma hasta la hierba del suelo", Tipo("planta"), 45, 110)    
+- **val bulbasaur** = Pokemon("Bulbasaur", "Un bicharraco que lleva una planta encima", Tipo("planta"), 45, 110)    
 
 - **val jugador1** = Jugador(charmander)    
 
 - **val jugador2** = Jugador(squirtle)    
 
-Dentro del main  existe un bucle que acabará cuando uno de los pokemons en el  combate acabe debilitado . Comenzará el combate y asignaremos numeros a los ataques anteriormente agregados para lanzarlos durante el combate. Empieza el turno el jugador 1 y luego el jugador 2
+Dentro del main  existe un bucle que acabará cuando uno de los pokemons en el  combate acabe debilitado . Comenzará el combate y tendremos numeros asignados  a los ataques anteriormente agregados para lanzarlos durante el combate. Empieza el turno el jugador 1 y luego el jugador 2.
