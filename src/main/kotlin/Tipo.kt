@@ -1,32 +1,20 @@
 class Tipo(var tipo: String) {
-    private val fortalezas: Map<String, List<String>> = mapOf(
-        "fuego" to listOf("hierba"),
-        "agua" to listOf("fuego"),
-        "hierba" to listOf("agua")
-    )
-
-    private val debilidades: Map<String, List<String>> = mapOf(
-        "fuego" to listOf("agua"),
-        "agua" to listOf("hierba"),
-        "hierba" to listOf("fuego")
-    )
+    /**
+     * Creamos una enum class para diferenciar la efectividad de los ataques en los pokemons
+     */
     enum class Efectividad(val valor: Double) {
         MUY_EFECTIVO(2.0),
         NORMAL(1.0),
         POCO_EFECTIVO(0.5)
     }
-    fun obtenerFortalezas(): List<String> {
-        return fortalezas[tipo] ?: emptyList()
-    }
-
-    fun obtenerDebilidades(): List<String> {
-        return debilidades[tipo] ?: emptyList()
-    }
-
+    /**
+     * Con este método podremos saber si el pokemon al que están atacando le hacen más, menos o igual daño.
+     * Esta función se utiliza en la clase pokemon para que el pokemon pueda recibir correctamente el daño.
+     */
     companion object {
         fun calcularEfectividad(tipoAtaque: Tipo, tipoActual: Tipo): Efectividad {
             return when (tipoActual.tipo) {
-                "fuego" -> when(tipoAtaque.tipo){
+                "fuego" -> when (tipoAtaque.tipo) {
                     "agua" -> Efectividad.MUY_EFECTIVO
                     "planta" -> Efectividad.POCO_EFECTIVO
                     else -> Efectividad.NORMAL
@@ -41,7 +29,7 @@ class Tipo(var tipo: String) {
                     "agua" -> Efectividad.POCO_EFECTIVO
                     else -> Efectividad.NORMAL
                 }
-                else -> Efectividad.POCO_EFECTIVO
+                else -> Efectividad.NORMAL
             }
         }
     }
