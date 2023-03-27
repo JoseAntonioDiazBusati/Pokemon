@@ -1,8 +1,7 @@
 # Pokemon
 ##Explicación del código
 
-Trabajo de entorno junto a Pablo Carmona.
-
+Trabajo de entorno junto a Pablo Carmona.  
 
 El proyecto se divide en 4 clases y una funcion principal.
 La clase Jugador se define por la eleccion de un pokemon para cada jugador.
