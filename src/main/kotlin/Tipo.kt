@@ -15,30 +15,6 @@ class Tipo(var tipo: String) {
         NORMAL(1.0),
         POCO_EFECTIVO(0.5)
     }
-
-    fun calcularEfectividad(tipoAtaque: Tipo): Efectividad {
-        if (tipo == "fuego") {
-            return when (tipoAtaque.tipo) {
-                "planta" -> Efectividad.MUY_EFECTIVO
-                "agua" -> Efectividad.POCO_EFECTIVO
-                else -> Efectividad.NORMAL
-            }
-        } else if (tipo == "agua") {
-            return when (tipoAtaque.tipo) {
-                "fuego" -> Efectividad.MUY_EFECTIVO
-                "planta" -> Efectividad.POCO_EFECTIVO
-                else -> Efectividad.NORMAL
-            }
-        } else if (tipo == "planta") {
-            return when (tipoAtaque.tipo) {
-                "agua" -> Efectividad.MUY_EFECTIVO
-                "fuego" -> Efectividad.POCO_EFECTIVO
-                else -> Efectividad.NORMAL
-            }
-        }
-        return Efectividad.NORMAL
-    }
-
     fun obtenerFortalezas(): List<String> {
         return fortalezas[tipo] ?: emptyList()
     }

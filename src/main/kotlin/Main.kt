@@ -9,11 +9,11 @@ fun main() {
     val squirtle = Pokemon("Squirtle", "Zenigame", Tipo("agua"), 40, 120)
     val bulbasaur = Pokemon("Bulbasaur", "Fushigidane", Tipo("planta"), 45, 110)
 
-    // Creamos a los jugadores con sus respectivos pokémon
+    // Creamos a los jugadores con uno de los pokemones creados
     val jugador1 = Jugador(charmander)
     val jugador2 = Jugador(squirtle)
 
-    // Comienza la batalla
+    // Comienza el combate
     while (jugador1.obtenerPokemon().ps > 0 && jugador2.obtenerPokemon().ps > 0) {
         // Turno del jugador 1
         println("Turno del jugador 1")
