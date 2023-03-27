@@ -1,5 +1,5 @@
 # Pokemon
-##Explicación del código
+## Explicación del código
 
 Trabajo de entorno junto a Pablo Carmona.  
 
